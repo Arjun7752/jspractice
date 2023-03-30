@@ -39,3 +39,34 @@ function findMiniMax(arr){
 }
 //findMiniMax([9,7,1,0,4,2]);
 //ouput: {mini: 0, max: 9}
+var obj = [
+
+    {
+        id: 1,
+        address: {
+            country: "US"
+        }
+    },
+    {
+        id: 1,
+        address: {
+            country: "US"
+        }
+    },
+    {
+        id: 1,
+        address: {
+            country: "US"
+        }
+    },
+    {
+        id: 1,
+        address: {
+            country: "India"
+        }
+    }
+];
+undefined
+obj.filter( (item) => {
+    return item.address.country === "US"
+}).length; //output: 3
