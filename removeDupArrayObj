@@ -13,3 +13,8 @@
             uniqueArray = Array.from(uniqueSet).map(JSON.parse);
               
             console.log(uniqueArray);
+
+
+//////////////////////////////
+
+[...new Map(books2.map(item => [item['title'], item])).values()]
