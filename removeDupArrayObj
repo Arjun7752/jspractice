@@ -1,0 +1,15 @@
+ var books = [
+                { title: "C++", author: "Bjarne" },
+                { title: "Java", author: "James" },
+                { title: "Python", author: "Guido" },
+                { title: "Java", author: "James" },
+            ];
+              
+            jsonObject = books.map(JSON.stringify);
+              
+            console.log(jsonObject);
+              
+            uniqueSet = new Set(jsonObject);
+            uniqueArray = Array.from(uniqueSet).map(JSON.parse);
+              
+            console.log(uniqueArray);
