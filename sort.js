@@ -64,3 +64,22 @@ const dup1 = arrObj.sort( (a, b) => a.name.localeCompare(b.name, "fr", {ignorePu
 undefined
 dup1;
 [{"name":"Arjun","id":1234,"age":35},{"name":"Asha","id":1224,"age":27},{"name":"Harini","id":1244,"age":15},{"name":"Ravi","id":1254,"age":25}]'
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+let myArr1 = [1, "ss", 11, 2, "aa"];
+let myArr2 = ["zzz", 1, "s", 11, 2, "a", 111];
+let myArr3 = [56, "awesome", 240, "happy", 6, 89];
+
+function sortArr(arr) {
+  let numArr = arr.filter((el) => typeof el === "number").sort((a, b) => a - b);
+  let strArr = arr.filter((el) => typeof el === "string").sort();
+  return numArr.concat(strArr);
+}
+
+console.log(`Unsorted: ${myArr1} Sorted: ${sortArr(myArr1)}`);
+console.log(`Unsorted: ${myArr2} Sorted: ${sortArr(myArr2)}`);
+console.log(`Unsorted: ${myArr3} Sorted: ${sortArr(myArr3)}`);
+VM2867:11 Unsorted: 1,ss,11,2,aa Sorted: 1,2,11,aa,ss
+VM2867:12 Unsorted: zzz,1,s,11,2,a,111 Sorted: 1,2,11,111,a,s,zzz
+VM2867:13 Unsorted: 56,awesome,240,happy,6,89 Sorted: 6,56,89,240,awesome,happy
