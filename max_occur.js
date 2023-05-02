@@ -18,3 +18,24 @@ function test(arr) {
 function mode(arr)  {
     return arr.sort( (a, b) => arr.filter(v => v === a).length - arr.filter( v => v ===b).length).pop()
 }
+
+///////////////////
+function getMaxOccurrence(a) {
+    var o = {}, mC = 0, mV, m;
+    for (var i=0, iL=a.length; i<iL; i++) {
+        m = a[i];
+        o.hasOwnProperty(m)? ++o[m] : o[m] = 1;
+        if (o[m] > mC) mC = o[m], mV = m;
+    }
+    return mV;
+}
+//////////////////////
+ const frequence = (array) =>
+      array.reduce(
+        (acc, item) =>
+          array.filter((v) => v === acc).length >=
+          array.filter((v) => v === item).length
+            ? acc
+            : item,
+        null
+      );
