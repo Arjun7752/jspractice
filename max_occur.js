@@ -39,3 +39,13 @@ function getMaxOccurrence(a) {
             : item,
         null
       );
+
+
+function maxOccurences(arr) {
+   let count = {}, max=0 , ele = 0;
+    for(let num of arr) {
+     count[num] = count[num] ? count[num] +1 : 1;
+   if(count[num] > max) max = count[num], ele=num;
+    }
+return count;
+}
