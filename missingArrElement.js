@@ -7,4 +7,5 @@ function missingArrElement(arr) {
       resutl.push(i)
     }
   }
+  return result;
 }
