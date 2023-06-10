@@ -23,3 +23,32 @@ let data = employees.reduce((r, e) => {
  
 let result = Object.values(data);
 console.log(result);
+
+
+const arr = [
+  "Albert",
+  "Simon",
+  "Luke",
+  "Alex",
+  "Jake",
+  "Lara",
+  "Blade",
+  "Blake",
+  "Larson"
+];
+
+let data = arr.reduce((r, e) => {
+  let alphabet = e[0];
+ 
+  // if there is no property in accumulator with this letter create it
+  if (!r[alphabet]) r[alphabet] = { alphabet, record: [e] }
+ 
+  // if there is push current element to children array for that letter
+  else r[alphabet].record.push(e);
+ 
+  // return accumulator
+  return r;
+}, {});
+ 
+let result = Object.values(data);
+console.log(result);
