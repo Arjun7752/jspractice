@@ -1,5 +1,6 @@
 import "./styles.css";
-import { useState } from "react";
+import { useState, useMemo, useEffect } from "react";
+import debouce from "lodash.debounce";
 
 const fruits = [
   "apple",
@@ -39,10 +40,20 @@ export default function App() {
     });
   }
 
+  const debouncedResults = useMemo(() => {
+    return debouce(handleChange, 300);
+  }, []);
+
+  useEffect(() => {
+    return () => {
+      debouncedResults.cancel();
+    };
+  });
+
   return (
     <div className="App">
       <h1>Fruit Stand</h1>
-      <input type="text" value={searchTerm} onChange={handleChange} />
+      <input type="text" onChange={debouncedResults} />
       {renderFruitList()}
     </div>
   );
