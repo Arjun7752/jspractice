@@ -1,0 +1,28 @@
+var arr = ['https://jsonplaceholder.typicode.com/posts', 
+'https://jsonplaceholder.typicode.com/comments',
+'https://jsonplaceholder.typicode.com/posts',
+'https://jsonplaceholder.typicode.com/comments']
+
+async function oneByOneCall(arr) {
+//console.log("are")
+ let result = [];
+ for(let i= 0 ; i <= arr.length - 1; i++){
+  let {data} = await makeApiCall(arr[i]);
+  result = [...result , data];
+  console.log(result);
+ }
+}
+
+function makeApiCall(api) {
+  return new Promise( (resolve) =>{
+    setTimeout( () => {
+      resolve(
+        { data: {
+        name : "arjun",
+        id : "api"
+      }})
+    }, 1000)
+  })
+}
+
+oneByOneCall(arr)
